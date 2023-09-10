@@ -1,17 +1,80 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+/*
+<-- Único componente -->
+!Los componentes deben ir siempre en mayúscula
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const App = () => {
+  const now = new Date();
+  const a = 10;
+  const b = 20;
+
+  return (
+    <div>
+      <p>Hello World, it is {now.toString()}</p>
+      <p>
+        {a} + {b} is {a + b}
+      </p>
+    </div>
+  );
+};
+*/
+
+// Múltiples componentes
+
+/*
+const Hello = () => {
+  return (
+    <div>
+      <p>Hello World!</p>
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <div>
+      <h1>Saludos!</h1>
+      <Hello />
+      <Hello />
+      <Hello />
+      <Hello />
+    </div>
+  );
+};
+
+*/
+// Pasar varios props
+const Hello = (props) => {
+  return (
+    <div>
+      <p>
+        Hola {props.name}, tienes {props.edad} años.
+      </p>
+    </div>
+  );
+};
+
+const Footer = () => {
+  return (
+    <div>
+      greeting app created by <a href="https://github.com/rugarcia25">Rubén</a>
+    </div>
+  );
+};
+
+const App = () => {
+  const name = "Alaya";
+  const edad = 27;
+  return (
+    <div>
+      <h1>Saludos!</h1>
+      <Hello name="Ruben" edad={28} />
+      <Hello name={name} edad={edad} />
+      <Footer />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById("root"));
