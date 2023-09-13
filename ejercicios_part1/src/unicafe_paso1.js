@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
+//! Aplicación UNICAFE
+
+// Paso 1 - Crear un dashboard de feedback del cliente
+
 const App = () => {
   const [counterG, setCounterG] = useState(0);
   const [counterN, setCounterN] = useState(0);
