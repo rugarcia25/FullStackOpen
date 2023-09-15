@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
-// Paso 2
-
-/*
-Expande tu aplicación para que puedas votar por la anécdota mostrada.
-*/
-
 const Button = (props) => {
   return <button onClick={props.onClick}>{props.text}</button>;
 };
@@ -29,6 +23,28 @@ const App = (props) => {
     setPoints(copy);
   };
 
+  // Buscamos el valor con más votos
+  const highestVotes = Math.max(...points);
+
+  // Asignamos la anecdota con más votos
+  const maxAnecdote = anecdotes[points.indexOf(highestVotes)];
+
+  if (!highestVotes)
+    return (
+      <div>
+        <h2>Anecdotes webpage!</h2>
+        <div>
+          <p>{props.anecdotes[selected]}</p>
+        </div>
+        <Button onClick={setToPoints} text="Vote" />
+        <Button onClick={setToSelected} text="Generate" />
+        <div>
+          <h3>Anecdote with most votes</h3>
+          <p>{maxAnecdote}</p> {/*Mostramos la anécdota más votada*/}
+        </div>
+      </div>
+    );
+
   return (
     <div>
       <h2>Anecdotes webpage!</h2>
@@ -37,6 +53,13 @@ const App = (props) => {
       </div>
       <Button onClick={setToPoints} text="Vote" />
       <Button onClick={setToSelected} text="Generate" />
+      <div>
+        <h3>Anecdote with most votes</h3>
+        <p>{maxAnecdote}</p> {/*Mostramos la anécdota más votada*/}
+        <p>
+          <strong>Winner</strong> with {highestVotes} votes!
+        </p>
+      </div>
     </div>
   );
 };
