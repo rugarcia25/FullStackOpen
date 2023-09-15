@@ -26,7 +26,5 @@ Part 9 - TypeScript
 
 Part 10 - React Native
 
-
-
 Course URL: https://fullstackopen.com/es/
 
