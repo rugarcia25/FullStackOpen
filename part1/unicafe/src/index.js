@@ -3,10 +3,6 @@ import ReactDOM from "react-dom";
 
 //! Aplicación UNICAFE
 
-/* 
-Paso 6 - Establecer los datos en una tabla HTML
-*/
-
 const StatisticLine = (props) => {
   return (
     <tr>

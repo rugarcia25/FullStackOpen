@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
-//! Aplicación Anecdotes
+// Paso 3
+
+/*
+implemente la versión final de la aplicación 
+que muestra la anécdota con el mayor número de votos
+*/
 
 const Button = (props) => {
   return <button onClick={props.onClick}>{props.text}</button>;
