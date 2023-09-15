@@ -1,5 +1,8 @@
 # FullStackOpen 2023
 
+¡Aprenda React, Redux, Node.js, MongoDB, GraphQL y TypeScript de una sola vez! Este curso le presentará el desarrollo web moderno basado en JavaScript. El enfoque principal es crear aplicaciones de una sola página con ReactJS que usan REST API creadas con Node.js.
+
+
 ✅ Part 0 - Fundamentals of Web apps
 
 ✅ Part 1 - Introduction to React
@@ -22,7 +25,7 @@ Part 9 - TypeScript
 
 Part 10 - React Native
 
-¡Aprenda React, Redux, Node.js, MongoDB, GraphQL y TypeScript de una sola vez! Este curso le presentará el desarrollo web moderno basado en JavaScript. El enfoque principal es crear aplicaciones de una sola página con ReactJS que usan REST API creadas con Node.js.
+
 
 Course URL: https://fullstackopen.com/es/
 
