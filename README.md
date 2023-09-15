@@ -1,5 +1,4 @@
-# FullStackOpen
-FullStackOpen 2023
+# FullStackOpen 2023
 
 ✅ Part 0 - Fundamentals of Web apps
 
