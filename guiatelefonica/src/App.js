@@ -4,8 +4,20 @@ const App = () => {
   const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState("");
   const [showAll] = useState(true);
+  const [newTlf, setNewTlf] = useState(""); // Paso 3 - Añadir números al listín
+  // Controlador de eventos de nombres
 
-  // Guardamos los nombres en la lista
+  const handleNameChange = (event) => {
+    setNewName(event.target.value);
+  };
+
+  // Controlador de eventos del tlf
+
+  const handleTlfChange = (event) => {
+    setNewTlf(event.target.value);
+  };
+
+  // Guardamos los nombres y tlf en la lista
 
   const addPerson = (event) => {
     event.preventDefault(); // Evitamos que se envíe el formulario
@@ -14,11 +26,16 @@ const App = () => {
     // Completamos la función para añadir los nombres
     const personObject = {
       name: newName,
+      tlf: newTlf,
       id: persons.length + 1,
     };
 
+    // Paso 2
+
+    // Evita que el usuario pueda agregar nombres que ya existen en el directorio telefónico.
+
     // Controlamos la entrada de datos
-    if (personObject.name === "") {
+    if (personObject.name === "" || personObject.tlf === "") {
       return false;
     }
 
@@ -32,9 +49,11 @@ const App = () => {
         return false;
       }
     }
+    // End Paso 2
 
     setPersons(persons.concat(personObject));
     setNewName("");
+    setNewTlf("");
   };
 
   // Operador condicional
@@ -48,10 +67,11 @@ const App = () => {
       <form onSubmit={addPerson}>
         <div>
           Name:
-          <input
-            value={newName}
-            onChange={(event) => setNewName(event.target.value)}
-          />
+          <input type="text" value={newName} onChange={handleNameChange} />
+          <br></br>
+          <br></br>
+          Number:
+          <input type="number" value={newTlf} onChange={handleTlfChange} />
         </div>
         <div>
           <button type="submit" onClick={addPerson}>
@@ -62,7 +82,11 @@ const App = () => {
       <h2>Numbers</h2>
       <ul>
         {personsToShow.map((person) => (
-          <li key={person.id}>{person.name}</li>
+          <li key={person.id}>
+            Nombre: {person.name}
+            <br></br>
+            Número: {person.tlf}
+          </li>
         ))}
       </ul>
     </div>
