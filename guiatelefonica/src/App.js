@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const App = () => {
   const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState("");
-  const [showAll, setShowAll] = useState(true);
+  const [showAll] = useState(true);
 
   // Guardamos los nombres en la lista
 
