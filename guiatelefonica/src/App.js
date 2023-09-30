@@ -64,7 +64,12 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <div>
+        Filtro <input type="text" />
+      </div>
+      <br></br>
       <form onSubmit={addPerson}>
+        <h2>Add a new</h2>
         <div>
           Name:
           <input type="text" value={newName} onChange={handleNameChange} />
@@ -74,6 +79,7 @@ const App = () => {
           <input type="number" value={newTlf} onChange={handleTlfChange} />
         </div>
         <div>
+          <br></br>
           <button type="submit" onClick={addPerson}>
             Add
           </button>
