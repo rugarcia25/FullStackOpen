@@ -22,6 +22,17 @@ const App = () => {
       return false;
     }
 
+    // Controlo que no exista en la lista
+
+    const template = `${newName} is already added to phonebook`;
+
+    for (let i = 0; i < persons.length; i++) {
+      if (persons[i].name === personObject.name) {
+        alert(template);
+        return false;
+      }
+    }
+
     setPersons(persons.concat(personObject));
     setNewName("");
   };
