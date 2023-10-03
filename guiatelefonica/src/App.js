@@ -70,20 +70,26 @@ const App = () => {
 
   return (
     <div>
-      <h2>Phonebook</h2>
+      <h1>Phonebook with React</h1>
       <div>
-        Filter by name
-        <input type="text" value={newFilter} onChange={handleFilterChange} />
+        <label>
+          Filter by name<br></br>
+          <input type="text" value={newFilter} onChange={handleFilterChange} />
+        </label>
       </div>
       <form onSubmit={addPerson}>
-        <h2>Add a new</h2>
+        <h2>Add a new Contact</h2>
         <div>
-          Name:
-          <input type="text" value={newName} onChange={handleNameChange} />
+          <label>
+            Name:<br></br>
+            <input type="text" value={newName} onChange={handleNameChange} />
+          </label>
           <br></br>
-          <br></br>
-          Number:
-          <input type="number" value={newTlf} onChange={handleTlfChange} />
+          <label>
+            {" "}
+            Number:<br></br>
+            <input type="number" value={newTlf} onChange={handleTlfChange} />
+          </label>
         </div>
         <div>
           <br></br>
@@ -92,7 +98,7 @@ const App = () => {
           </button>
         </div>
       </form>
-      <h2>Numbers</h2>
+      <h2>Contacts</h2>
       <ul>
         {personsToShow.map((person) => (
           <li key={person.id}>
