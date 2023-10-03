@@ -3,7 +3,6 @@ import React, { useState } from "react";
 const App = () => {
   const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState("");
-  const [showAll] = useState(true);
   const [newTlf, setNewTlf] = useState(""); // Paso 3 - Añadir números al listín
   const [newFilter, setNewFilter] = useState(""); // Paso 4 - Añadir filtro
 
