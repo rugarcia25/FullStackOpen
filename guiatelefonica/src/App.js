@@ -5,6 +5,8 @@ const App = () => {
   const [newName, setNewName] = useState("");
   const [showAll] = useState(true);
   const [newTlf, setNewTlf] = useState(""); // Paso 3 - Añadir números al listín
+  const [newFilter, setNewFilter] = useState(""); // Paso 4 - Añadir filtro
+
   // Controlador de eventos de nombres
 
   const handleNameChange = (event) => {
@@ -15,6 +17,10 @@ const App = () => {
 
   const handleTlfChange = (event) => {
     setNewTlf(event.target.value);
+  };
+
+  const handleFilterChange = (event) => {
+    setNewFilter(event.target.value);
   };
 
   // Guardamos los nombres y tlf en la lista
@@ -56,18 +62,19 @@ const App = () => {
     setNewTlf("");
   };
 
-  // Operador condicional
-  const personsToShow = showAll
-    ? persons
-    : persons.filter((persons) => persons.name === true);
+  // Paso 4 - Filtro para buscar por nombre
+
+  const personsToShow = newFilter
+    ? persons.filter((person) => person.name.toLowerCase().includes(newFilter))
+    : persons;
 
   return (
     <div>
       <h2>Phonebook</h2>
       <div>
-        Filtro <input type="text" />
+        Búsqueda por nombre:
+        <input type="text" value={newFilter} onChange={handleFilterChange} />
       </div>
-      <br></br>
       <form onSubmit={addPerson}>
         <h2>Add a new</h2>
         <div>
