@@ -72,7 +72,7 @@ const App = () => {
     <div>
       <h2>Phonebook</h2>
       <div>
-        Búsqueda por nombre:
+        Filter by name
         <input type="text" value={newFilter} onChange={handleFilterChange} />
       </div>
       <form onSubmit={addPerson}>
