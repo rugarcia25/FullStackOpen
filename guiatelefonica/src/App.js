@@ -85,7 +85,6 @@ const App = () => {
           </label>
           <br></br>
           <label>
-            {" "}
             Number:<br></br>
             <input type="number" value={newTlf} onChange={handleTlfChange} />
           </label>
